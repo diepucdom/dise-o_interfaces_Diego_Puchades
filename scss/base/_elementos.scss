@@ -1,0 +1,178 @@
+// scss/base/_elementos.scss
+@use "../abstracts/mixins" as *;
+
+// ==========================================================================
+// 1. CONFIGURACIÓN RAÍZ Y RESET BÁSICO
+// ==========================================================================
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
+  font-family: var(--fuente-principal);
+  font-size: var(--paso-0);
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-superficie);
+  color: var(--color-texto);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+// ==========================================================================
+// 2. TIPOGRAFÍA Y BLOQUES DE TEXTO
+// ==========================================================================
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-block-start: var(--espacio-l);
+  margin-block-end: var(--espacio-s);
+  color: var(--color-texto);
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--paso-3); }
+h2 { font-size: var(--paso-2); }
+h3 { font-size: var(--paso-1); }
+
+p {
+  max-inline-size: 65ch;
+  text-wrap: pretty;
+  margin-block-end: var(--espacio-m);
+}
+
+small {
+  font-size: var(--paso--1);
+  color: var(--color-texto-atenuado);
+}
+
+strong {
+  font-weight: 700;
+  color: var(--color-texto);
+}
+
+// ==========================================================================
+// 3. LISTAS, ENLACES Y LÍNEAS DIVISORIAS
+// ==========================================================================
+ul, ol {
+  padding-inline-start: var(--espacio-l);
+  margin-block-end: var(--espacio-m);
+  max-inline-size: 65ch;
+}
+
+li {
+  margin-block-end: var(--espacio-3xs);
+}
+
+a {
+  color: var(--color-acento);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-acento);
+    outline-offset: 2px;
+  }
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--color-borde);
+  margin-block: var(--espacio-l);
+}
+
+// ==========================================================================
+// 4. TABLAS Y DATOS TABULARES
+// ==========================================================================
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-block-end: var(--espacio-l);
+  font-size: var(--paso-0);
+}
+
+caption {
+  font-weight: 700;
+  text-align: left;
+  margin-block-end: var(--espacio-xs);
+  color: var(--color-texto-atenuado);
+}
+
+th, td {
+  padding: var(--espacio-s);
+  border: 1px solid var(--color-borde);
+  text-align: left;
+  
+  &:nth-child(n+2) {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+th {
+  background-color: var(--color-superficie-elevada);
+  font-weight: 700;
+}
+
+// ==========================================================================
+// 5. FORMULARIOS Y CONTROLES BÁSICOS
+// ==========================================================================
+fieldset {
+  border: 1px solid var(--color-borde-control);
+  border-radius: var(--radio-m);
+  padding: var(--espacio-m);
+  margin-block-end: var(--espacio-l);
+  background-color: var(--color-superficie);
+}
+
+legend {
+  padding-inline: var(--espacio-xs);
+  font-weight: 700;
+  color: var(--color-texto);
+}
+
+label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espacio-xs);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+select,
+textarea {
+  min-height: 44px;
+  width: 100%;
+  padding: var(--espacio-xs) var(--espacio-s);
+  border: 1px solid var(--color-borde-control);
+  border-radius: var(--radio-s);
+  background-color: var(--color-superficie);
+  color: var(--color-texto);
+  font-family: inherit;
+  font-size: var(--paso-0);
+
+  &:focus-visible {
+    outline: 2px solid var(--color-acento);
+    outline-offset: 2px;
+  }
+}
+
+button,
+input[type="submit"],
+input[type="button"] {
+  min-height: 44px;
+  cursor: pointer;
+  font-family: inherit;
+}

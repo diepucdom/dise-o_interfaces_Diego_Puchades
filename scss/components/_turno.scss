@@ -1,0 +1,79 @@
+@use "../abstracts/mixins" as *;
+
+.turno {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--espacio-m);
+  border: 2px solid var(--color-borde);
+  border-radius: var(--radio-m);
+  background-color: var(--color-superficie);
+  cursor: pointer;
+  position: relative;
+  min-height: 44px;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.1s ease;
+
+  // Ocultado accesible del input nativo radio/checkbox
+  &__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  &__hora {
+    font-size: var(--paso-1);
+    font-weight: 700;
+    color: var(--color-texto);
+  }
+
+  &__estado {
+    font-size: var(--paso--1);
+    color: var(--color-texto-atenuado);
+    margin-block-start: var(--espacio-3xs);
+  }
+
+  &__pista {
+    font-size: var(--paso--1);
+    font-weight: 600;
+    color: var(--color-acento);
+  }
+
+  // Estados interactivos sin depender exclusivamente del color (WCAG 1.4.1)
+  &:hover:not(:has(.turno__input:disabled)) {
+    border-color: var(--color-acento);
+    background-color: var(--color-superficie-elevada);
+  }
+
+  &:has(.turno__input:checked) {
+    border-color: var(--color-acento);
+    border-width: 3px;
+    background-color: var(--color-acento-tenue);
+    
+    .turno__estado::after {
+      content: " · [Seleccionado]";
+      font-weight: 700;
+    }
+  }
+
+  &:has(.turno__input:disabled) {
+    opacity: 0.5;
+    border-style: dashed;
+    cursor: not-allowed;
+    background-color: var(--color-superficie-elevada);
+
+    .turno__estado::after {
+      content: " · [Ocupado]";
+    }
+  }
+
+  &:has(.turno__input:focus-visible) {
+    outline: 2px solid var(--color-acento);
+    outline-offset: 3px;
+  }
+}

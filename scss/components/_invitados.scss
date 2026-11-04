@@ -1,0 +1,75 @@
+@use "../abstracts/mixins" as *;
+
+.invitados {
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-m);
+  padding: var(--espacio-m);
+  background-color: var(--color-superficie);
+
+  &__titulo {
+    font-size: var(--paso-0);
+    font-weight: 700;
+    margin-block-end: var(--espacio-xs);
+    color: var(--color-texto);
+  }
+
+  &__grupo {
+    display: flex;
+    gap: var(--espacio-xs);
+    flex-wrap: wrap;
+    margin-top: var(--espacio-xs);
+  }
+
+  &__opcion {
+    flex: 1;
+    min-width: 44px;
+    min-height: 44px; // Objetivo táctil mínimo
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-borde-control);
+    border-radius: var(--radio-s);
+    background-color: var(--color-superficie);
+    font-weight: 600;
+    font-size: var(--paso-0);
+    color: var(--color-texto);
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+
+    input {
+      position: absolute;
+      opacity: 0.01;
+      width: 1px;
+      height: 1px;
+      pointer-events: none;
+    }
+
+    &:hover:not(:has(input:disabled)) {
+      border-color: var(--color-acento);
+      background-color: var(--color-superficie-elevada);
+    }
+
+    &:has(input:checked) {
+      background-color: var(--color-acento);
+      color: var(--color-superficie);
+      border-color: var(--color-acento);
+      box-shadow: inset 0 0 0 1px var(--color-superficie);
+    }
+
+    &:has(input:disabled) {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    &:has(input:focus-visible) {
+      outline: 2px solid var(--color-acento);
+      outline-offset: 2px;
+    }
+  }
+
+  &__info {
+    font-size: var(--paso--1);
+    color: var(--color-texto-atenuado);
+    margin-block-start: var(--espacio-s);
+  }
+}

@@ -1,0 +1,109 @@
+// =============================================================
+// TOKENS DE DISEÑO · ÚNICA FUENTE DE VERDAD
+// -------------------------------------------------------------
+// Este es el ÚNICO archivo del proyecto donde se permite escribir
+// un color en hexadecimal (Stylelint lo prohíbe en el resto).
+// Ruta A (Figma): copia aquí los valores de tus Variables de Figma.
+// Ruta B (VS Code): decide aquí los valores y justifícalos en
+//                   docs/decisiones.md y en guia.html.
+// Los valores de ejemplo son los de la Actividad UD2 CORREGIDOS
+// (la paleta original no superaba el contraste mínimo).
+// TODO Fase 1: sustitúyelos por los de tu ficha de caso.
+// =============================================================
+@use "funciones" as *;
+
+// -------------------------------------------------------------
+// 1. PRIMITIVOS · Valores en bruto, sin significado de uso.
+//    Nombre = familia + luminosidad (50 muy claro … 950 muy oscuro).
+//    Un componente NUNCA usa un primitivo directamente.
+// -------------------------------------------------------------
+$primitivos: (
+  // Acento corporativo Los Pinos (H = 22deg)
+  "acento-50":  #fdf2f0,
+  "acento-300": #f89985,
+  "acento-700": #b82613, //para modo claro
+  "acento-950": #450a04,
+
+  // Neutros
+  "neutro-000": #ffffff,
+  "neutro-100": #f4f4f5,
+  "neutro-200": #e4e4e7,
+  "neutro-700": #3f3f46,
+  "neutro-800": #27272a,
+  "neutro-900": #18181b,
+
+  // Estado y semántica
+  "exito-700":  #15803d,
+  "exito-300":  #86efac,
+  "error-700":  #b91c1c,
+  "error-300":  #fca5a5
+);
+
+// ==========================================================================
+// 2. TOKENS SEMÁNTICOS (Modo Claro / Modo Oscuro)
+// ==========================================================================
+$tema: (
+  "color-superficie": ("neutro-000", "neutro-900"),
+  "color-superficie-elevada": ("neutro-100", "neutro-800"),
+  "color-texto": ("neutro-900", "neutro-100"),
+  "color-texto-atenuado": ("neutro-700", "neutro-200"),
+  "color-acento": ("acento-700", "acento-300"),
+  "color-acento-tenue": ("acento-50", "acento-950"),
+  "color-borde": ("neutro-200", "neutro-700"),
+  "color-borde-control": ("neutro-700", "neutro-200"),
+  "color-exito": ("exito-700", "exito-300"),
+  "color-error": ("error-700", "error-300")
+);
+
+// ==========================================================================
+// 3. PARES DE CONTRASTE (Requerido para verificación en Sass)
+// ==========================================================================
+$pares-contraste: (
+  "--color-texto": "--color-superficie",
+  "--color-acento": "--color-superficie",
+  "--color-exito": "--color-superficie",
+  "--color-error": "--color-superficie"
+);
+
+// ==========================================================================
+// 4. TIPOGRAFÍA BASE Y FUENTES
+// ==========================================================================
+$tipo-base-movil: 1rem;
+$tipo-razon-movil: 1.125;
+$tipo-base-escritorio: 1.125rem;
+$tipo-razon-escritorio: 1.25;
+
+$fuente-principal: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$fuente-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+// ==========================================================================
+// 5. ESCALA TIPOGRÁFICA FLUIDA (Pasos -2 a 3)
+// ==========================================================================
+$escala-tipografica: (
+  "paso--2": clamp(0.75rem, 0.7rem + 0.25vw, 0.85rem),
+  "paso--1": clamp(0.8889rem, 0.84rem + 0.24vw, 1rem),
+  "paso-0":  clamp(1rem, 0.95rem + 0.25vw, 1.125rem),
+  "paso-1":  clamp(1.125rem, 1.05rem + 0.38vw, 1.4063rem),
+  "paso-2":  clamp(1.2656rem, 1.15rem + 0.58vw, 1.7578rem),
+  "paso-3":  clamp(1.4238rem, 1.25rem + 0.87vw, 2.1973rem)
+);
+
+// ==========================================================================
+// 6. ESPACIADO FLUIDO Y RADIOS DE BORDE
+// ==========================================================================
+$escala-espaciado: (
+  "espacio-3xs": clamp(0.25rem, 0.23rem + 0.1vw, 0.3125rem),
+  "espacio-2xs": clamp(0.5rem, 0.46rem + 0.2vw, 0.625rem),
+  "espacio-xs":  clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem),
+  "espacio-s":   clamp(1rem, 0.95rem + 0.25vw, 1.125rem),
+  "espacio-m":   clamp(1.5rem, 1.4rem + 0.5vw, 1.75rem),
+  "espacio-l":   clamp(2rem, 1.8rem + 1vw, 2.5rem),
+  "espacio-xl":  clamp(3rem, 2.6rem + 2vw, 4rem)
+);
+
+$radios: (
+  "radio-s": 0.25rem,  // 4px
+  "radio-m": 0.5rem,   // 8px
+  "radio-l": 1rem,     // 16px
+  "radio-total": 9999px
+);
