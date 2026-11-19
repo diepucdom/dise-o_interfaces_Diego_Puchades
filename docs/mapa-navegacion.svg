@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420">
+    <style>
+        .box { fill: #f8f9fa; stroke: #2b2118; stroke-width: 2; rx: 6; }
+        .text { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; fill: #2b2118; text-anchor: middle; font-weight: bold; }
+        .sub { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; fill: #5c4938; text-anchor: middle; }
+        .arrow { stroke: #9e472a; stroke-width: 2; marker-end: url(#arrow); }
+    </style>
+    <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#9e472a" />
+        </marker>
+    </defs>
+
+    <!-- Páginas de tarea -->
+    <rect x="25" y="40" width="175" height="60" class="box" />
+    <text x="112" y="65" class="text">Turnos</text>
+    <text x="112" y="83" class="sub">index.html</text>
+
+    <rect x="240" y="40" width="175" height="60" class="box" />
+    <text x="327" y="65" class="text">Confirmar reserva</text>
+    <text x="327" y="83" class="sub">reserva.html</text>
+
+    <rect x="455" y="40" width="175" height="60" class="box" />
+    <text x="542" y="65" class="text">Justificante</text>
+    <text x="542" y="83" class="sub">justificante.html</text>
+
+    <rect x="670" y="40" width="185" height="60" class="box" />
+    <text x="762" y="65" class="text">Mis turnos</text>
+    <text x="762" y="83" class="sub">mis-turnos.html</text>
+
+    <!-- Páginas de lectura -->
+    <rect x="240" y="230" width="175" height="60" class="box" />
+    <text x="327" y="255" class="text">Normas</text>
+    <text x="327" y="273" class="sub">normas.html</text>
+
+    <rect x="455" y="230" width="175" height="60" class="box" />
+    <text x="542" y="255" class="text">Aviso legal</text>
+    <text x="542" y="273" class="sub">aviso-legal.html</text>
+
+    <rect x="670" y="230" width="185" height="60" class="box" />
+    <text x="762" y="255" class="text">Privacidad</text>
+    <text x="762" y="273" class="sub">privacidad.html</text>
+
+    <!-- Flujo principal -->
+    <line x1="200" y1="70" x2="234" y2="70" class="arrow" />
+    <line x1="415" y1="70" x2="449" y2="70" class="arrow" />
+    <line x1="630" y1="70" x2="664" y2="70" class="arrow" />
+
+    <!-- Retorno a Turnos desde Mis turnos -->
+    <path d="M 762 100 L 762 145 L 112 145 L 112 106" fill="none" class="arrow" />
+    <text x="437" y="138" class="sub">Menú / Volver a Turnos (sin callejones sin salida)</text>
+</svg>
