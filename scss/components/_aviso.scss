@@ -1,54 +1,38 @@
-@use "../abstracts/mixins" as *;
+// =============================================================
+// COMPONENTE · AVISO DE PAGO (BIZUM)
+// =============================================================
+@use "../abstracts" as *;
 
-.aviso {
-  display: flex;
-  flex-direction: column;
-  gap: var(--espacio-s);
-  padding: var(--espacio-m);
-  border: 2px solid var(--color-acento);
-  border-radius: var(--radio-m);
-  background-color: var(--color-acento-tenue);
-  margin-block-end: var(--espacio-l);
-
-  &__cabecera {
-    display: flex;
-    align-items: center;
+@layer components {
+  .aviso {
+    display: grid;
     gap: var(--espacio-xs);
-  }
+    padding: var(--espacio-m);
+    border: 2px solid var(--color-acento);
+    border-radius: var(--radio-tarjeta);
+    margin-block-end: var(--espacio-m);
+    background-color: var(--color-acento-tenue);
 
-  &__titulo {
-    font-size: var(--paso-1);
-    font-weight: 700;
-    color: var(--color-texto);
-    margin: 0;
-  }
+    &__titulo {
+      margin: 0;
+      color: var(--color-acento);
+      font-size: var(--paso-2);
+    }
 
-  &__texto {
-    font-size: var(--paso-0);
-    color: var(--color-texto);
-    margin: 0;
-    max-inline-size: 65ch;
-  }
+    &__datos {
+      display: grid;
+      gap: var(--espacio-2xs);
+      margin: 0;
+    }
 
-  &__detalle {
-    display: flex;
-    flex-direction: column;
-    gap: var(--espacio-2xs);
-    padding: var(--espacio-s);
-    background-color: var(--color-superficie);
-    border: 1px solid var(--color-borde);
-    border-radius: var(--radio-s);
-  }
-
-  &__concepto {
-    font-family: var(--fuente-mono);
-    font-weight: 700;
-    font-size: var(--paso-0);
-    padding: var(--espacio-3xs) var(--espacio-xs);
-    background-color: var(--color-superficie-elevada);
-    border-radius: var(--radio-s);
-    border: 1px dashed var(--color-borde-control);
-    display: inline-block;
-    letter-spacing: 0.05em;
+    &__concepto {
+      display: inline-block;
+      padding: var(--espacio-3xs) var(--espacio-2xs);
+      border: 1px solid var(--color-borde);
+      border-radius: var(--radio-control);
+      background-color: var(--color-superficie);
+      font-family: var(--fuente-mono);
+      font-weight: 700;
+    }
   }
 }
