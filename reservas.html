@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Confirmar reserva · Pádel Residencial Los Pinos</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <div class="cabecera__interior contenedor">
+      <a class="cabecera__marca" href="index.html">Pádel Residencial Los Pinos</a>
+      <nav class="menu" aria-label="Principal">
+        <ul class="menu__lista">
+          <li><a class="menu__enlace" href="index.html">Turnos</a></li>
+          <li><a class="menu__enlace" href="mis-turnos.html">Mis turnos</a></li>
+          <li><a class="menu__enlace" href="normas.html">Normas</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="contenedor">
+    <h1>Confirmar reserva</h1>
+
+    <div class="reserva">
+      <section class="reserva__resumen" aria-labelledby="titulo-resumen">
+        <h2 id="titulo-resumen">Resumen del turno</h2>
+        <dl>
+          <dt>Vivienda</dt>
+          <dd>4.º A</dd>
+          <dt>Fecha</dt>
+          <dd>27 de noviembre de 2026</dd>
+          <dt>Horario</dt>
+          <dd>18:00 – 19:00 (60 min)</dd>
+          <dt>Pista</dt>
+          <dd>Pista Central</dd>
+        </dl>
+      </section>
+
+      <form class="reserva__formulario" action="justificante.html" method="get">
+        <fieldset class="invitados">
+          <legend>¿Cuántos invitados no residentes? (1,50 €/jugador · máx. 3)</legend>
+          <label class="invitados__opcion" for="inv-0">
+            <input id="inv-0" class="invitados__control" type="radio" name="invitados" value="0" checked> 0
+          </label>
+          <label class="invitados__opcion" for="inv-1">
+            <input id="inv-1" class="invitados__control" type="radio" name="invitados" value="1"> 1
+          </label>
+          <label class="invitados__opcion" for="inv-2">
+            <input id="inv-2" class="invitados__control" type="radio" name="invitados" value="2"> 2
+          </label>
+          <label class="invitados__opcion" for="inv-3">
+            <input id="inv-3" class="invitados__control" type="radio" name="invitados" value="3"> 3
+          </label>
+        </fieldset>
+
+        <section class="aviso" aria-labelledby="titulo-pago">
+          <h2 id="titulo-pago" class="aviso__titulo">Pago por Bizum</h2>
+          <p>Los invitados no residentes abonan 1,50 € por jugador antes de entrar en la pista.</p>
+          <p class="aviso__datos">
+            <span>
+              <strong>Importe total:</strong>
+              <output class="aviso__importe aviso__importe--1" for="inv-1">1,50 €</output>
+              <output class="aviso__importe aviso__importe--2" for="inv-2">3,00 €</output>
+              <output class="aviso__importe aviso__importe--3" for="inv-3">4,50 €</output>
+            </span>
+            <span><strong>Teléfono Bizum:</strong> 600 000 000</span>
+            <span><strong>Concepto:</strong> <code class="aviso__concepto">PADEL 4A 27NOV</code></span>
+          </p>
+        </section>
+
+        <fieldset>
+          <legend>Condiciones de uso</legend>
+          <label class="casilla" for="aceptar-normas">
+            <input id="aceptar-normas" type="checkbox" name="normas" required>
+            <span>He leído y acepto las <a href="normas.html">normas de uso de las pistas</a>.</span>
+          </label>
+        </fieldset>
+
+        <div class="reserva__acciones">
+          <button class="boton boton--bloque" type="submit">Confirmar reserva</button>
+          <a class="boton boton--secundario boton--bloque" href="index.html">Cambiar turno</a>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <div class="pie__interior contenedor">
+      <address class="pie__datos">
+        Comunidad de Propietarios Residencial Los Pinos · CIF H-00000001<br>
+        Calle de Los Pinos, 36 · 00000 Localidad Ficticia<br>
+        <a href="mailto:administracion@lospinos.example">administracion@lospinos.example</a>
+      </address>
+      <nav aria-label="Legal">
+        <ul class="pie__enlaces">
+          <li><a href="aviso-legal.html">Aviso legal</a></li>
+          <li><a href="privacidad.html">Privacidad</a></li>
+          <li><a href="normas.html">Normas de uso</a></li>
+        </ul>
+      </nav>
+      <p class="pie__nota"><small>Proyecto académico ficticio · DIW 0615 · 2.º DAW</small></p>
+    </div>
+  </footer>
+</body>
+</html>
