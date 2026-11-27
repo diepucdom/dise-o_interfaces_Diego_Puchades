@@ -10,6 +10,6 @@ En otros proyectos utilizaria otras tecnologias de diseño como puedan ser tailw
 3. Es falso, si bien es cierto que la compilacion con forward en cascada hace más fácil la tarea de no tener que actualizar todos los modulos de la página no se puede negar el hecho de que el navegador compila el Sass, que sí que habita en el navegador, es decir está ahí pero si que lo compila (interpreta)
 ## A4
 1. A incidencias.html se llegará desde index.html a través de un enlace en el footer.
-2. Se vuelve atrás de incidencias  sin usar las flechas del navegador con un botón de retorno.
+2. Se vuelve atrás de incidencias  sin usar las flechas del navegador con el pie, en un enlace incrustado que redirige al inicio (desde dónde se accede a la página de incidencias).
 3. Turnos · index.html -> Incidencias · incidecias.html
 4. Creo que debería estar en las páginas más representativas de la aplicación web por lo que es una buena idea tenerlo en el menú principal donde se puede llegar de forma intuitiva.
