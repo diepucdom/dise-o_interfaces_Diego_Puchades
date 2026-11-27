@@ -1,0 +1,46 @@
+@use "../abstracts" as *;
+layer components{
+  .boton--peligro {
+    @include objetivo-tactil;
+
+    position: relative;
+    display: grid;
+    gap: var(--espacio-3xs);
+    padding: var(--espacio-s);
+    border: 2px solid var(--color-borde);
+    border-radius: var(--radio-tarjeta);
+    background-color: var(--color-superficie);
+    cursor: pointer;
+    transition: border-color 150ms ease, background-color 150ms ease;
+
+    &__bloque {
+      position: absolute;
+      inline-size: 1px;
+      block-size: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+
+    &bloque__elemento {
+      position: absolute;
+      inline-size: 1px;
+      block-size: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+  }
+  &bloque--modificador {
+      position: absolute;
+      inline-size: 1px;
+      block-size: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+    
+  &:hover {
+      background-color: var(--color-acento-tenue);
+    }
+}
