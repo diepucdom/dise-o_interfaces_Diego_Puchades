@@ -1,0 +1,14 @@
+// =============================================================
+// LAYOUT · BLOQUE HUECO DE PLANTILLAS
+// =============================================================
+@use "../abstracts" as *;
+
+@layer layout {
+  .hueco {
+    padding: var(--espacio-l);
+    border: 2px dashed var(--color-borde-control);
+    border-radius: var(--radio-tarjeta);
+    background-color: var(--color-superficie);
+    color: var(--color-texto-suave);
+  }
+}
